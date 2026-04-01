@@ -21,3 +21,11 @@ git clone https://github.com/sbwml/packages_lang_golang -b 25.x feeds/packages/l
 
 # design修改proxy链接
 sed -i -r "s#navbar_proxy = 'openclash'#navbar_proxy = 'passwall'#g" feeds/luci/themes/luci-theme-design/luasrc/view/themes/design/header.htm
+#更新集客AC
+rm -rf feeds/luci/applications/luci-app-gecoosac
+rm -rf feeds/packages/net/gecoosac
+#git clone https://github.com/lwb1978/openwrt-gecoosac
+git clone https://github.com/laipeng668/luci-app-gecoosac
+mv luci-app-gecoosac/luci-app-gecoosac feeds/luci/applications/luci-app-gecoosac
+mv luci-app-gecoosac/gecoosac feeds/packages/net/gecoosac
+rm -rf luci-app-gecoosac
